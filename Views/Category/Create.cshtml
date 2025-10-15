@@ -1,0 +1,42 @@
+﻿@model Category
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card border-1 shadow-sm rounded-3">
+                <div class="card-header bg-white py-4 border-0">
+                    <h2 class="h4 fw-bold text-primary">Create Category</h2>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" asp-controller="Category" asp-action="Create">
+                        <div class="mb-4">
+                            <label for="categoryName" class="form-label fw-medium">Category Name</label>
+                            <input asp-for="Name" type="text"
+                                   class="form-control form-control-lg"
+                                   id="categoryName"
+                                   name="Name"
+                                   required
+                   
+                                   placeholder="e.g. Electronics, Books, etc." />
+                        </div>
+                        <div class="mb-5">
+                            <label for="displayOrder" class="form-label fw-medium">Display Order</label>
+                            <input asp-for="DispleyOrder" type="number"
+                                   class="form-control form-control-lg"
+                                   id="displayOrder"
+                                   name="DispleyOrder"
+                                   min="0"
+                                   placeholder="e.g. 1" /> 
+                            <div class="form-text text-body-secondary">
+                                Items with lower numbers appear first in lists.
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="reset" class="btn btn-outline-secondary px-4">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4 form-control">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
